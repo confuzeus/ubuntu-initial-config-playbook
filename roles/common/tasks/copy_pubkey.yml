@@ -1,0 +1,13 @@
+---
+- name: create the .ssh dir
+  file:
+    path: "/home/{{ default_user }}/.ssh"
+    state: directory
+
+- name: copy the key to authorized_keys
+  copy:
+    src: "{{ pub_key }}"
+    dest: "/home/{{ default_user }}/.ssh/authorized_keys"
+    owner: "{{ default_user }}"
+    group: "{{ default_user }}"
+    mode: u+rw,g+rw,o-rwx

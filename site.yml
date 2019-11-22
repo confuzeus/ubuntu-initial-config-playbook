@@ -1,0 +1,8 @@
+---
+# Playbook to configure an Ubuntu server.
+- name: configure all specified hosts
+  hosts: ubuntuservers
+  remote_user: root
+  tasks:
+    - include_role:
+        name: common

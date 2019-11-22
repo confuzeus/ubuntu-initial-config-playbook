@@ -1,0 +1,9 @@
+---
+# Upgrade system packages to the latest version
+- name: update cache
+  apt:
+    update_cache: yes
+
+- name: upgrade packages
+  command:
+    cmd: apt -y upgrade

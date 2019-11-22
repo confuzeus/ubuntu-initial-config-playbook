@@ -1,0 +1,30 @@
+---
+# Tasks to setup the firewall
+- name: allow all outgoing traffic
+  ufw:
+    default: allow
+    direction: outgoing
+- name: deny all incoming traffic
+  ufw:
+    default: deny
+    direction: incoming
+- name: allow incoming ssh connections on default port
+  ufw:
+    direction: in
+    rule: allow
+    port: 22
+    proto: tcp
+
+- name: allow incoming ssh connections on custom port
+  ufw:
+    direction: in
+    rule: allow
+    port: "{{ ssh_port }}"
+    proto: tcp
+  notify:
+    - enable firewall
+
+- name: make sure ufw is enabled on startup
+  systemd:
+    name: ufw
+    enabled: yes

@@ -1,0 +1,7 @@
+---
+# Variables for all hosts.
+ssh_port: 50000
+default_user: mike
+user_name: Michael
+user_password_hash: "secret"
+pub_key: "/home/mike/.ssh/server.pub"

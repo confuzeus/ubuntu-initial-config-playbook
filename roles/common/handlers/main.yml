@@ -1,0 +1,8 @@
+---
+- name: reload sshd
+  systemd:
+    name: sshd
+    state: reloaded
+- name: enable firewall
+  ufw:
+    state: enabled

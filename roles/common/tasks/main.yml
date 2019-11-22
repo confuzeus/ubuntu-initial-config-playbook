@@ -1,0 +1,6 @@
+---
+- include_tasks: upgrade_system.yml
+- include_tasks: create_user.yml
+- include_tasks: copy_pubkey.yml
+- include_tasks: setup_sshd.yml
+- include_tasks: setup_firewall.yml

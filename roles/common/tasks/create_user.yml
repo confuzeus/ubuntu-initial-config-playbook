@@ -1,0 +1,8 @@
+---
+# Create the default unprivileged user.
+- name: create an unprivileged user
+  user:
+    name: "{{ default_user }}"
+    comment: "{{ user_name }}"
+    shell: "/bin/bash"
+    password: "{{ user_password_hash }}"
